@@ -1,1 +1,66 @@
 
+Group Assignment
+Machine Learning
+
+•	Please make a group of 3-4 students.
+•	Use Google Colab Notebook to solve the problems given. Add comments to explain each line of code written.
+•	Make a video to explain your results.
+•	Submit links to access Google Colab Notebook and explanation video.
+
+Problem 1: Clustering
+Customer segmentation is the practice of separating customers into groups that reflect similarities among customers in each cluster. A store owner wants to divide customers into segments to optimize the significance of each customer to the business and then modify products according to the distinct needs and behaviours of the customers. It also helps the business to cater for the concerns of different types of customers. In this project, you need to perform unsupervised clustering of data on the customer’s records from a groceries firm's data (https://drive.google.com/file/d/11mmwgxWwnfF3PUhsELG8NkbpWeFHZoUW/view) and answer questions with the following directions.
+ 
+a.	Load the dataset and show the 10 first data.
+b.	Using the pandas library, get features information of the data, so you understand what steps you should take to clean the dataset. (use: info())
+•	Are there any missing values? 
+•	Are there any categorical features? 
+•	What should you do if there are some categorical features?
+c.	Perform data cleaning by dropping the rows that have missing values.
+d.	Perform the following steps to engineer some new features (feature engineering):
+•	Create a feature "Customer_For" indicating the number of days the customers started to shop in the store relative to the last recorded date (most recent customer in the record). Use the "Dt_Customer" feature that indicates the number of days a customer is registered in the firm's database.
+•	Extract the "Age" of a customer by the "Year_Birth" indicating the birth year of the respective person.
+•	Create another feature "Spent" indicating the total amount spent by the customer in various categories over the span of two years.
+•	Create another feature "Living_With" out of "Marital_Status" to extract the living situation of couples.
+•	Create a feature "Children" to indicate total children in a household that is, kids and teenagers.
+•	To get further clarity of household, Creating feature indicating "Family_Size"
+•	Create a feature "Is_Parent" to indicate parenthood status
+•	Create three categories in the "Education" by simplifying its value counts.
+•	Dropping some of the redundant features
+e.	Generate the descriptive statistics of the data using the pandas library (use: describe())
+f.	Plot some of the selected features ("Income", "Recency", "Customer_For", "Age", "Spent", "Is_Parent") to see outliers in the data using seaborn library. 
+g.	Drop the outliers by setting a limit on the features that have few outliers.
+h.	Using the seaborn library, look at the correlation matrix amongst the features (excluding the categorical attributes).
+i.	Perform the following steps to preprocess the data:
+•	Get a list of categorical features, then label encoding the categorical features (object datatypes)
+•	Create a subset of dataframe by dropping the features on deals accepted and promotions ('AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'AcceptedCmp1', 'AcceptedCmp2', 'Complain',  'Response')
+•	Scale the features using the StandardScaler
+•	Use the scaled data for reducing the dimensionality
+j.	Perform dimensionality reduction to 3 using Principal component analysis (PCA). Dimensionality reduction is the process of reducing the number of random variables under consideration, by obtaining a set of principal variables. PCA is a technique for reducing the dimensionality of such datasets, increasing interpretability but at the same time minimizing information loss.
+k.	Perform clustering using 3 different methods and visualize the clustering results:
+•	K-Means Clustering (use the Elbow method to find the number of clusters to be formed)
+•	Agglomerative Clustering (use the dendrogram to find the number of clusters to be formed)
+•	DBSCAN (use different values of radius/epsilon and MinPoints)
+l.	Examine the clusters formed and analyze them.
+Problem 2: Ensemble Learning
+You are going to use the House Prices dataset . The objective is to predict the SalePrice of each house based on the 79 explanatory variables describing (almost) every aspect of residential homes in Ames. 
+Train: https://drive.google.com/file/d/1yOZaHufx1Ay2ypHqwd6ShgsHEO6iqCmq/view 
+Test: https://drive.google.com/file/d/1NTwBvMxzmDEuG1cmHE4Dg7cCqShXtCHF/view  
+Description: https://drive.google.com/file/d/1uCs3ZiirXUmdsk4SbillcAmIl5yq2D5g/view 
+In this project, you need to try various ensemble learning approaches with the following directions and compare their results. 
+a.	Load the training dataset and show the 10 first data.
+b.	Using the pandas library, get features information of the data, so you understand what steps you should take to clean the dataset. (use: info())
+c.	Generate the descriptive statistics of the data using the pandas library (use: describe())
+d.	Perform data preprocessing and feature scaling required for the dataset.
+e.	Build various regression models individually and tune the hyperparameters for each model. After getting the best hyperparameters, evaluate the models with the testing dataset using the Root Mean Square Error (RMSE) metric to compare the prediction result.
+•	Linear Regression
+•	Lasso Regression
+•	ElasticNet Regression
+•	Ridge Regression
+f.	Explore various ensemble learning modelling using multiple models with already tuned hyperparameters. Evaluate the ensemble model with the testing dataset using the RMSE metric. 
+•	Bagging Regressor
+•	Forests of Randomized Trees (Random Forest Regressor, Extra Tress Regressor)
+•	Boosting Regressor (AdaBoost Regressor, Gradient Boosting Regressor, XGB Regressor)
+•	Voting Regressor
+•	Stacking Regressor
+g.	Examine and analyze the result between various regression models individually and the ensemble learning models. 
+
